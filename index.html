@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/d18dc4df1e.js" crossorigin="anonymous"></script>
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="card">
+    <div class="search">
+      <input type="text" placeholder="Enter city name" spellcheck="false">
+      <button><i class="fa-solid fa-search"></i></button>
+    </div>
+    <div class="weather">
+      <img src="./images/weather.png"  class="weather-icon" alt="">
+      <h1 class="temp">22°c</h1>
+      <h2 class="city">New York</h2>
+      <div class="details">
+        <div class="col1">
+          <img src="./images/humidity.png" alt="">
+          <div>
+            <p class="humidity">50%</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="col1">
+          <img src="./images/windy.jpeg" alt="">
+          <div>
+            <p class="wind">15 km/h</p>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const apiKey ='5a7defa7a73e2eb6014b0490e2daea0d';
+    const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?&units=metric&q=lagos'
+    async function checkWeather() {
+      const response = await fetch(apiUrl + `&appid=&{apikey}`)
+      const data = await response.json()
+    }
+  </script>
+</body>
+</html>
